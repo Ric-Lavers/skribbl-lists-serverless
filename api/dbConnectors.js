@@ -7,16 +7,12 @@ const {
   groupSchema
 } = require("./mongoSchemas")
 
-console.log(process.env)
 var MONGO_URI = process.env.MONGO_URI
 // if (process.env.NODE_ENV === "development") {
 //   MONGO_URI = process.env.PROD_MONGO_URI //DEVELOPMENT_MONGO_URI
 // } else {
 //   MONGO_URI = process.env.MONGO_URI || process.env.PROD_MONGO_URI
 // }
-console.log({
-  MONGO_URI: MONGO_URI
-});
 
 //Mongo connection
 mongoose.Promise = global.Promise

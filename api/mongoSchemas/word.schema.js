@@ -7,7 +7,8 @@ export const wordSchema = new Schema({
   groupId: String,
   word: {
     type: String,
-    unique: true
+    unique: true,
+    required: true
   },
   created_on: {
     type: Date,

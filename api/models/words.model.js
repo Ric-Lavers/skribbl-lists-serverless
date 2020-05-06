@@ -49,10 +49,11 @@ export const wordsByGroup = async (name) => {
   }) => word);
 };
 
-export const addWord = async ({
-  word
-}) => {
+export const addWord = async (body) => {
 
+  let {
+    word
+  } = body
   let newWord = await Word.findOne({
     word
   })

@@ -37,16 +37,22 @@ const getGroups = async (req, res) => {
 };
 
 const postWord = async (req, res) => {
+
+  const body = JSON.parse(req.body)
+
   try {
     let group = await findOrCreateGroup(req.query.groupName);
     //get or craete word object
-    const word = await addWord(req.body);
+    const word = await addWord(body);
+
+
 
     // if words already exists throw dupplicate error
+    const words = group.words.map(({
+      word
+    }) => word);
 
-    const words = group.words.map(({ word }) => word);
-
-    if (!words.includes(req.body.word)) {
+    if (!words.includes(body.word)) {
       await group.words.addToSet(word._id);
       await group.save();
     } else {
