@@ -64,7 +64,7 @@ const postWord = async (req, res) => {
     }
     res.send({
       isDuplicate: false,
-      words: words.concat(req.body.word),
+      words: words.concat(body.word),
     });
   } catch (error) {
     res.status(400).send(
