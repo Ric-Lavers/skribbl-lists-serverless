@@ -4,10 +4,13 @@ const mongoose = require("mongoose")
 const {
   demoSchema,
   wordSchema,
-  groupSchema
+  groupSchema,
+  teamSchema,
 } = require("./mongoSchemas")
 
-var MONGO_URI = process.env.MONGO_URI
+var MONGO_URI =
+  // "mongodb://parkham:Boostbeat26@ds143131.mlab.com:43131/skribbl" ||
+  "mongodb://localhost/demo"
 // if (process.env.NODE_ENV === "development") {
 //   MONGO_URI = process.env.PROD_MONGO_URI //DEVELOPMENT_MONGO_URI
 // } else {
@@ -18,15 +21,12 @@ var MONGO_URI = process.env.MONGO_URI
 mongoose.Promise = global.Promise
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 })
 
 const Demo = mongoose.model("demo", demoSchema)
 const Word = mongoose.model("word", wordSchema)
 const Group = mongoose.model("group", groupSchema)
+const Team = mongoose.model("team", teamSchema)
 
-export {
-  Demo,
-  Word,
-  Group
-}
+export { Demo, Word, Group, Team }

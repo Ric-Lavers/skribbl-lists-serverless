@@ -1,69 +1,58 @@
-import {
-  Word,
-  Group
-} from "../dbConnectors";
+import { Word, Group } from "../dbConnectors"
 
 export const findOrCreateGroup = async (name) => {
   let group = await Group.findOne({
     name,
-  }).populate('words');
+  }).populate("words")
 
   if (!group || group.length === 0) {
-
     group = await addGroup({
-      name
+      name,
     })
   }
 
-  return group;
-};
+  return group
+}
 
 export const allGroups = async () => {
-  const groups = await Group.find({});
+  const groups = await Group.find({})
 
-  return groups;
-};
+  return groups
+}
 
 export const addGroup = async (input) => {
   let newGroup = new Group({
     ...input,
-  });
+  })
 
-  newGroup.id = newGroup._id;
-  return await newGroup.save();
-};
+  newGroup.id = newGroup._id
+  return await newGroup.save()
+}
 
 export const allWords = async () => {
-  const words = await Word.find({}).select("word");
+  const words = await Word.find({}).select("word")
 
-  return words.map(({
-    word
-  }) => word);
-};
+  return words.map(({ word }) => word)
+}
 
 export const wordsByGroup = async (name) => {
   const group = await findOrCreateGroup(name)
 
-  return group.words.map(({
-    word
-  }) => word);
-};
+  return group.words.map(({ word }) => word)
+}
 
 export const addWord = async (body) => {
-
-  let {
-    word
-  } = body
+  let { word } = body
   let newWord = await Word.findOne({
-    word
+    word,
   })
 
   if (newWord) return newWord
 
   newWord = new Word({
     word,
-  });
+  })
 
-  newWord.id = newWord._id;
-  return await newWord.save();
-};
+  newWord.id = newWord._id
+  return await newWord.save()
+}

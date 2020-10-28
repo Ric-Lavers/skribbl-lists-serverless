@@ -1,20 +1,20 @@
 import mongoose from "mongoose"
 
-import { wordSchema } from "./word.schema"
-
 const Schema = mongoose.Schema
 mongoose.set("useCreateIndex", true)
 
-export const groupSchema = new Schema({
-  name: {
+export const teamSchema = new Schema({
+  teamName: {
     type: String,
-    unique: true,
   },
-  words: [
+  guests: [
     {
-      type: mongoose.ObjectId,
-      ref: "word",
-      index: true,
+      type: String,
+    },
+  ],
+  numbers: [
+    {
+      type: String,
     },
   ],
   created_on: {
