@@ -6,6 +6,7 @@ const {
   wordSchema,
   groupSchema,
   teamSchema,
+  ipSchema
 } = require("./mongoSchemas")
 
 var MONGO_URI =
@@ -28,5 +29,6 @@ const Demo = mongoose.model("demo", demoSchema)
 const Word = mongoose.model("word", wordSchema)
 const Group = mongoose.model("group", groupSchema)
 const Team = mongoose.model("team", teamSchema)
+const IP = mongoose.model("ip", ipSchema)
 
-export { Demo, Word, Group, Team }
+export { Demo, Word, Group, Team, IP }
