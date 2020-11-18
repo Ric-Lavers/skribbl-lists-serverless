@@ -10,7 +10,7 @@ const {
 } = require("./mongoSchemas")
 
 var MONGO_URI =
-  // "mongodb://parkham:Boostbeat26@ds143131.mlab.com:43131/skribbl" ||
+  "mongodb://parkham:Boostbeat26@ds143131.mlab.com:43131/skribbl" ||
   "mongodb://localhost/demo"
 // if (process.env.NODE_ENV === "development") {
 //   MONGO_URI = process.env.PROD_MONGO_URI //DEVELOPMENT_MONGO_URI
