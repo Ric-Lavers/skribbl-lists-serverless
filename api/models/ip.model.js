@@ -1,30 +1,23 @@
-import { IP } from "../dbConnectors"
+import { IP } from "../dbConnectors";
 
 const replaceIP = async (ipData) => {
-  try {
-    let newIP = await IP.findOneAndUpdate({},ipData, {
-      new: true,
-      upsert: true
-    })
-    console.log(newIP);
-    await newIP.save()
-    return newIP
-  }catch (err){
-    return err
-  }
-}
+  let newIP = await IP.findOneAndUpdate({}, ipData, {
+    new: true,
+    upsert: true,
+  });
+  console.log(newIP);
+  await newIP.save();
+  return newIP;
+};
 
 const getIP = async () => {
   try {
-    let ips = await IP.find()
+    let ips = await IP.find();
 
-    return ips
-  }catch (err){
-    return err
+    return ips;
+  } catch (err) {
+    return err;
   }
-}
+};
 
-export {
-  replaceIP,
-  getIP
-}
+export { replaceIP, getIP };
