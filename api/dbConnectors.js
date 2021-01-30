@@ -7,6 +7,7 @@ const {
   groupSchema,
   teamSchema,
   ipSchema,
+  budgetItem,
 } = require("./mongoSchemas");
 
 console.log(process.env);
@@ -15,9 +16,10 @@ var MONGO_URI =
   "mongodb://parkham:Boostbeat26@ds143131.mlab.com:43131/skribbl" ||
   "mongodb://localhost/demo";
 
-// if (process.env.NODE_ENV === "development") {
-//   MONGO_URI = process.env.PROD_MONGO_URI //DEVELOPMENT_MONGO_URI
-// } else {
+if (process.env.NODE_ENV === "development") {
+  MONGO_URI = "mongodb://localhost/demo";
+}
+//  else {
 //   MONGO_URI = process.env.MONGO_URI || process.env.PROD_MONGO_URI
 // }
 
@@ -34,5 +36,6 @@ const Word = mongoose.model("word", wordSchema);
 const Group = mongoose.model("group", groupSchema);
 const Team = mongoose.model("team", teamSchema);
 const IP = mongoose.model("ip", ipSchema);
+const BudgetItem = mongoose.model("budgetItem", budgetItem);
 
-export { Demo, Word, Group, Team, IP };
+export { Demo, Word, Group, Team, IP, BudgetItem };

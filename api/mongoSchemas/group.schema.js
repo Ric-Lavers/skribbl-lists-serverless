@@ -1,9 +1,9 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
-import { wordSchema } from "./word.schema"
+import { wordSchema } from "./word.schema";
 
-const Schema = mongoose.Schema
-mongoose.set("useCreateIndex", true)
+const Schema = mongoose.Schema;
+mongoose.set("useCreateIndex", true);
 
 export const groupSchema = new Schema({
   name: {
@@ -21,4 +21,4 @@ export const groupSchema = new Schema({
     type: Date,
     default: Date.now(),
   },
-})
+});
