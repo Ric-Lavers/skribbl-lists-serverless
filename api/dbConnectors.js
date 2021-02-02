@@ -8,9 +8,9 @@ const {
   teamSchema,
   ipSchema,
   budgetItem,
+  userSchema,
 } = require("./mongoSchemas");
 
-console.log(process.env);
 var MONGO_URI =
   "mongodb+srv://ric_lavers:ric123@cluster0.0yqzc.mongodb.net/loops?retryWrites=true&w=majority" ||
   "mongodb://parkham:Boostbeat26@ds143131.mlab.com:43131/skribbl" ||
@@ -37,5 +37,6 @@ const Group = mongoose.model("group", groupSchema);
 const Team = mongoose.model("team", teamSchema);
 const IP = mongoose.model("ip", ipSchema);
 const BudgetItem = mongoose.model("budgetItem", budgetItem);
+const User = mongoose.model("user", userSchema);
 
-export { Demo, Word, Group, Team, IP, BudgetItem };
+export { Demo, Word, Group, Team, IP, BudgetItem, User };

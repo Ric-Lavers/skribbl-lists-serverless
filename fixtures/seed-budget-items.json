@@ -1,0 +1,25 @@
+[
+  {
+    "title": "high fifty",
+    "price": 50,
+    "score": {
+      "upd": [],
+      "dissd": []
+    }
+  },
+  {
+    "title": "Up'd state",
+    "price": 100,
+    "score": { "upd": [], "dissd": [] }
+  },
+  {
+    "title": "lego",
+    "price": 200,
+    "score": {
+      "upd": [],
+      "dissd": []
+    }
+  },
+  { "title": "lego", "price": 45, "score": { "upd": [], "dissd": [] } },
+  { "title": "lego", "price": 75, "score": { "upd": [], "dissd": [] } }
+]

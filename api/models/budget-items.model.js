@@ -26,7 +26,7 @@ export const updateBudgetItem = async (data) => {
 export const updateBudgetScoreItem = async (data) => {
   console.log("update Budget Score Item");
   const { score, _id } = data;
-  await BudgetItem.updateOne({ _id }, { score }, { upsert: true });
+  await BudgetItem.updateOne({ _id }, { score });
   const updatedBudgetItem = await BudgetItem.findById(_id);
 
   return updatedBudgetItem;
