@@ -23,9 +23,13 @@ export const allUsers = async () => {
 };
 
 export const updateUser = async (data) => {
-  console.log("update user");
-  await User.updateOne({ _id: data._id }, data, { upsert: true });
-  const { name, number, _id } = await User.findById(data._id);
-
+  if (data._id) {
+    await User.updateOne({ _id: data?._id }, data, {
+      upsert: true,
+    });
+    const { name, number, _id } = await User.findById(data._id);
+    return { name, number, _id };
+  }
+  const { name, number, _id } = await createUser(data);
   return { name, number, _id };
 };

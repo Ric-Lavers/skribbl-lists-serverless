@@ -13,6 +13,9 @@ export const budgetItem = new Schema(
       src: String,
     },
     price: Number,
+    img: {
+      src: String,
+    },
     score: {
       total: {
         type: Number,

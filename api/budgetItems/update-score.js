@@ -1,4 +1,4 @@
-const cors = require("micro-cors")();
+import cors from "../../utils/microCors";
 
 import { updateBudgetScoreItem } from "../models/budget-items.model";
 
