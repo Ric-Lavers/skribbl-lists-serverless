@@ -4,6 +4,12 @@ import { allBudgetItems } from "../../models/budget-items.model";
 import { makeUserVotes } from "./utils/makeUserVotes";
 
 module.exports = cors(async (req, res) => {
+  if (req.method === "OPTIONS") {
+    res.status(200);
+    res.send();
+    return;
+  }
+
   try {
     const user = await updateUser(req.body);
     let items = await allBudgetItems();

@@ -1,4 +1,4 @@
-const cors = require("micro-cors")((req, res) => {
+const cors = require("micro-cors")((req, res, ...args) => {
   if (req.method === "OPTIONS") {
     res.status(200);
     res.send();
