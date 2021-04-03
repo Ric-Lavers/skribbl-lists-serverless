@@ -3,6 +3,12 @@ const cors = require("micro-cors")();
 import { createBudgetItem } from "../models/budget-items.model";
 
 module.exports = cors(async (req, res) => {
+  if (req.method === "OPTIONS") {
+    res.status(200);
+    res.send();
+    return;
+  }
+
   try {
     const item = await createBudgetItem(req.body);
 
